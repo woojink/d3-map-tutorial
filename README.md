@@ -28,11 +28,11 @@ This tutorial was created for the [Introduction to D3](https://www.facebook.com/
 ### Why D3.js?
 The main advantages of [D3.js](https://d3js.org/) are that it's extremely flexible and ready for web:
 
-* Almost every aspect of D3 visualizations can be manipulated, from simple aspects like colours to more specific tasks like pixel-perfect positioning, path bezier curving. You have control over each data point as it comes in and can set the logic on how it is interpreted into a visual element. While this may seem daunting, especially from something like Excel or even ggplot2, it is also incredibly rewarding when you're able create exactly the visualization you envision
+* Almost every aspect of D3 visualizations can be manipulated, from simple aspects like colours to more specific tasks like pixel-perfect positioning, path bezier curving. You have control over each data point as it comes in and can set the logic on how it is interpreted into a visual element. While this may seem daunting, especially from something like Excel or even ggplot2, it is also incredibly rewarding when you're able create exactly the visualization you envision.
 
 * It is a JavaScript library that integrates seemlessly into webpages. In comparison to many other data visualization tools that either create static images, require Flash applets, or something like Shiny to deploy R work; D3 just requires a simple script import on a <abbr title="HyperText Markup Language">HTML</abbr> file and all the tools are ready to be integrated into your website.
 
-* It uses [scalable vector graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) (<abbr title="Scalable Vector Graphics">SVG</abbr>) to create the visualizations, which result in smooth graphics that scale well for different media.s
+* It uses [scalable vector graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) (<abbr title="Scalable Vector Graphics">SVG</abbr>) to create the visualizations, which result in smooth graphics that scale well for different media.
 
 ### Console is your best friend
 Your browser's console is an interactive shell for JavaScript, much like running `python` on your terminal. On Firefox, you can bring it up using Cmd/Ctrl (⌘) + Alt (⌥) + K; on Chrome, you can get it using Cmd/Ctrl (⌘) + Alt (⌥) + J.
