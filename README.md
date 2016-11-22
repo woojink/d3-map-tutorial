@@ -1,7 +1,7 @@
 # Introduction to D3: Map Visualization
 by [Woojin Kim](http://woojink.com)
 
-This tutorial was created for the [Introduction to D3](https://www.facebook.com/events/1801441506770835/) event hosted by the [Columbia Data Science Society](http://cdssatcu.com/).
+This tutorial was created for the [Introduction to D3](https://www.facebook.com/events/1801441506770835/) event hosted by the [Columbia Data Science Society](http://cdssatcu.com/). You can see the finished product [here](https://woojink.github.io/d3-tutorial/).
 
 ## Table of Contents
 <!-- MarkdownTOC depth=3 autolink="true" bracket="round" -->
