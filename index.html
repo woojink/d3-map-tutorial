@@ -93,7 +93,8 @@
             //     min = d3.min(all_values);
             // var color_scale = d3.scalePow()
             //                     .domain([min, max])
-            //                     .range(colors);
+            //                     .range([colors[0], colors[colors.length-1]])
+            //                     .exponent(3);
 
             // Check out the color scale
             console.log( color_scale(21) );
