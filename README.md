@@ -16,7 +16,7 @@ This tutorial was created for the [Introduction to D3](https://www.facebook.com/
     - [Data loading / pre-processing](#data-loading--pre-processing)
     - [SVG setup](#svg-setup)
     - [Geography setup](#geography-setup)
-    - [Color scale setup](#color-scale-setup)
+    - [Colour scale setup](#colour-scale-setup)
     - [The map](#the-map)
     - [Extras: Aesthetics](#extras-aesthetics)
     - [Extras: Mouseover action / tooltip window](#extras-mouseover-action--tooltip-window)
@@ -31,7 +31,7 @@ The main advantages of [D3.js](https://d3js.org/) are that it's extremely flexib
 
 * Almost every aspect of D3 visualizations can be manipulated, from simple aspects like colours to more specific tasks like pixel-perfect positioning, path bezier curving. You have control over each data point as it comes in and can set the logic on how it is interpreted into a visual element. While this may seem daunting, especially from something like Excel or even ggplot2, it is also incredibly rewarding when you're able create exactly the visualization you envision.
 
-* It is a JavaScript library that integrates seemlessly into webpages. In comparison to many other data visualization tools that either create static images, require Flash applets, or something like Shiny to deploy R work; D3 just requires a simple script import on a <abbr title="HyperText Markup Language">HTML</abbr> file and all the tools are ready to be integrated into your website.
+* It is a JavaScript library that integrates seemlessly into webpages. In comparison to many other data visualization tools that either create static images, require Flash applets, or something like Shiny to deploy R work; D3 just requires a simple script import on a <abbr title="HyperText Markup Language">HTML</abbr> file and all the tools are ready to be integrated into your website. This also means everything is done [client-side](https://en.wikipedia.org/wiki/Client-side_scripting) and you don't need anything more than a place to host your files.
 
 * It uses [scalable vector graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) (<abbr title="Scalable Vector Graphics">SVG</abbr>) to create the visualizations, which result in smooth graphics that scale well for different media.
 
@@ -44,11 +44,13 @@ Here you can test snippets of code, see the raw outputs of your code, explore yo
 Chrome disables cross-origin requests for local files. In order to have files opened as expected, navigate to the folder on terminal and execute `python -m SimpleHTTPServer 8000` to quickly create a server. You can now access the rendered page at <http://localhost:8000/>. Cmd/Ctrl (⌘) + C to quit when you're done.
 
 ## Data sources
+For this tutorial, we will be looking at the county-level poverty rates in the United States. The files you'll need are included in the repo, but the sources are included below in case you wanted to find more information or wanted to explore different datasets:
+
 * [United States County-level GeoJSON (5m)](http://eric.clst.org/Stuff/USGeoJSON)
 * [USDA Economic Research Service - Poverty Data (2014)](https://www.ers.usda.gov/data-products/county-level-data-sets/download-data.aspx)<br />(Make sure you delete the top two rows and save as CSV for this tutorial)
 
 ## Let's get coding!
-Start with the `template.html` file. It has the basic template for a <abbr title="HyperText Markup Language">HTML</abbr> page already written, as well as basic <abbr title="Cascading Style Sheets">CSS</abbr> definitions for the page and the tooltip we'll add.
+Start with the `template.html` file. It has the basic template for a <abbr title="HyperText Markup Language">HTML</abbr> page already written, as well as basic <abbr title="Cascading Style Sheets">CSS</abbr> definitions for the page and the tooltip we'll add. The finished code is on `index.html`, feel free to use that as a reference if you ever get confused. Hopefully by the end of this, you'll have something that looks similar!
 
 ### D3.js library
 We begin by importing the D3 library. You can either download the script and have it pointing locally or use a <abbr title="Content delivery network">CDN</abbr>. Go ahead import the <abbr title="Content delivery network">CDN</abbr> version by adding the following snippet somewhere in the header section:
@@ -70,9 +72,9 @@ d3.queue()
 
 Try putting `console.log(data_csv)` in the `.await()` block to see how the data looks in the browser. You'll notice that it's a bunch of objects corresponding to data from each county. Also take a look at the map data using `console.log(map_json)`, you'll notice that all the data is nested under the `features` key. Inside each object, you'll see the shape of each county saved under `geometry` and basic facts saved under `properties`.
 
-The ID we're interested in using is the [<abbr title="Federal Information Processing Standards">FIPS</abbr> county code](https://en.wikipedia.org/wiki/FIPS_county_code), which is a combination of state and county codes you see under map data's `properties`. As it'll be more clear later, we want to be able to access the poverty dataset's rows only using the <abbr title="Federal Information Processing Standards">FIPS</abbr> code. To do this, we make use of [`d3.map()`](https://github.com/d3/d3-collection/blob/master/README.md#maps), which is basically a key/value map, much like a dictionary.
+The unique ID that we can use to identify the different counties is called the [<abbr title="Federal Information Processing Standards">FIPS</abbr> county code](https://en.wikipedia.org/wiki/FIPS_county_code), which is a combination of state and county codes you see under map data's `properties`. As it'll be more clear later, we want to be able to access the poverty dataset's rows using the <abbr title="Federal Information Processing Standards">FIPS</abbr> code. To do this, we make use of [`d3.map()`](https://github.com/d3/d3-collection/blob/master/README.md#maps), which is basically a key/value map, much like a dictionary.
 
-We want to create this map as we're loading the data. In D3, most of the time data is involved, you can invoke an anonymous function to process individual rows.
+We want to create this map as we're loading the data. In D3, most of the time data is involved, you can invoke an [anonymous function](https://en.wikipedia.org/wiki/Anonymous_function) to process individual rows.
 ```javascript
 function(d) {
     // d corresponds to the row
@@ -139,7 +141,7 @@ var proj = d3.geoAlbersUsa()
 var path_gen = d3.geoPath(proj);
 ```
 
-### Color scale setup
+### Colour scale setup
 We want to be able to map specific poverty rate values into different colours. Different data require different scales, used for different effect. Some of the more common scales include linear ([`d3.scaleLinear()`](https://github.com/d3/d3-scale#linear-scales)), power ([`d3.scalePow()`](https://github.com/d3/d3-scale#power-scales)), log ([`d3.scaleLog()`](https://github.com/d3/d3-scale#log-scales)), quantile ([`d3.scaleQuantile()`](https://github.com/d3/d3-scale#quantile-scales)), and quantize ([`d3.scaleQuantize()`](https://github.com/d3/d3-scale#quantize-scales))
 
 You have to be careful about the scale you choose. As you see below, the same data paints very different pictures:
