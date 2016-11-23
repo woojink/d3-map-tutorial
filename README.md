@@ -9,6 +9,7 @@ This tutorial was created for the [Introduction to D3](https://www.facebook.com/
 - [Introduction](#introduction)
     - [Why D3.js?](#why-d3js)
     - [Console is your best friend](#console-is-your-best-friend)
+    - [Note to working on Chrome](#note-to-working-on-chrome)
 - [Data sources](#data-sources)
 - [Let's get coding!](#lets-get-coding)
     - [D3.js library](#d3js-library)
@@ -38,6 +39,9 @@ The main advantages of [D3.js](https://d3js.org/) are that it's extremely flexib
 Your browser's console is an interactive shell for JavaScript, much like running `python` on your terminal. On Firefox, you can bring it up using Cmd/Ctrl (⌘) + Alt (⌥) + K; on Chrome, you can get it using Cmd/Ctrl (⌘) + Alt (⌥) + J.
 
 Here you can test snippets of code, see the raw outputs of your code, explore your variables, and much more. Whenever you have anything you want to see on the console, put the variable in `console.log()`.
+
+### Note to working on Chrome
+Chrome disables cross-origin requests for local files. In order to have files opened as expected, navigate to the folder on terminal and execute `python -m SimpleHTTPServer 8000` to quickly create a server. You can now access the rendered page at <http://localhost:8000/>. Cmd/Ctrl (⌘) + C to quit when you're done.
 
 ## Data sources
 * [United States County-level GeoJSON (5m)](http://eric.clst.org/Stuff/USGeoJSON)
