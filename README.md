@@ -36,12 +36,12 @@ The main advantages of [D3.js](https://d3js.org/) are that it's extremely flexib
 * It uses [scalable vector graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) (<abbr title="Scalable Vector Graphics">SVG</abbr>) to create the visualizations, which result in smooth graphics that scale well for different media.
 
 ### Console is your best friend
-Your browser's console is an interactive shell for JavaScript, much like running `python` on your terminal. On Firefox, you can bring it up using Cmd/Ctrl (⌘) + Alt (⌥) + K; on Chrome, you can get it using Cmd/Ctrl (⌘) + Alt (⌥) + J.
+Your browser's console is an interactive shell for JavaScript, much like running `python` on your terminal. On Firefox, you can bring it up using Cmd (⌘)/Ctrl (Windows) + Alt (⌥) + K; on Chrome, you can get it using Cmd (⌘)/Ctrl (Windows) + Alt (⌥) + J.
 
 Here you can test snippets of code, see the raw outputs of your code, explore your variables, and much more. Whenever you have anything you want to see on the console, put the variable in `console.log()`.
 
 ### Note to working on Chrome
-Chrome disables cross-origin requests for local files. In order to have files opened as expected, navigate to the folder on terminal and execute `python -m SimpleHTTPServer 8000` to quickly create a server. You can now access the rendered page at <http://localhost:8000/>. Cmd/Ctrl (⌘) + C to quit when you're done.
+Chrome disables cross-origin requests for local files. In order to have files opened as expected, navigate to the folder on terminal and execute `python -m SimpleHTTPServer 8000` to quickly create a server. You can now access the rendered page at <http://localhost:8000/>. Ctrl (⌃) + C to quit when you're done.
 
 ## Data sources
 For this tutorial, we will be looking at the county-level poverty rates in the United States. The files you'll need are included in the repo, but the sources are included below in case you wanted to find more information or wanted to explore different datasets:
